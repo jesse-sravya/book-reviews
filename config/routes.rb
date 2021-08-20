@@ -2,6 +2,8 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
 
+  get '/book-reviews/search', to: 'book_review#search'
+
   devise_for :admin_users, controllers: {
     sessions: 'admin_users/sessions'
   }, skip: %w[registrations]
